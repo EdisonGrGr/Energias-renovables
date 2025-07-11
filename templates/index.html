@@ -5,13 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Energías Renovables</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-  <h1>Energías Renovables</h1>
+  <header class="header">
+        <div class="container">
+            <h3 class="logo">Renewable<span>Energies</span></h3>
+                <ul class="nav-menu">
+                    <li class="nav-menu-item"><a href="#inicio" class="nav-menu-link">Inicio</a></li>
+                    <li class="nav-menu-item"><a href="#tipos" class="nav-menu-link">Tipos</a></li>
+                    <li class="nav-menu-item"><a href="#beneficios" class="nav-menu-link">Beneficios</a></li>
+                    <li class="nav-menu-item"><a href="#proyectos" class="nav-menu-link">Proyectos</a></li>
+                    <li class="nav-menu-item"><a href="#contacto" class="nav-menu-link">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>Explora las energías<span> renovables</span></h1>
+        <h2>Información sobre energías renovables y su impacto en el medio ambiente.</h2>
+      </div>
+    </section>
 
   <div class="filtros">
-    <label>País:
-      <select id="countrySelect">
+    <label> País:
+      <select id="countrySelect" class="form-select" aria-label="Default select example">
         {% for country in countries %}
         <option value="{{ country }}">{{ country }}</option>
         {% endfor %}
@@ -19,7 +40,7 @@
     </label>
 
     <label>Año:
-      <select id="yearSelect">
+        <select id ="yearSelect" class="form-select" aria-label="Default select example">
         {% for year in years %}
         <option value="{{ year }}">{{ year }}</option>
         {% endfor %}
@@ -27,7 +48,7 @@
     </label>
 
     <label>Tipo Energía:
-      <select id="energyTypeSelect">
+        <select id="energyTypeSelect" class="form-select" aria-label="Default select example">
         {% for type in energy_types %}
         <option value="{{ type }}">{{ type }}</option>
         {% endfor %}
@@ -35,7 +56,7 @@
     </label>
 
     <label>Tipo de gráfica:
-  <select id="chartTypeSelect">
+    <select id="chartTypeSelect" class="form-select" aria-label="Default select example">
     <option value="bar">Barras</option>
     <option value="pie">Torta</option>
     <option value="line">Línea</option>
@@ -46,7 +67,7 @@
 
 
     <label>Métricas:
-  <select id="metricSelect" multiple size="6">
+    <select id="metricSelect" class="form-select" aria-label="Default select example" multiple>
     <option value="Production (GWh)">Production (GWh)</option>
     <option value="Installed Capacity (MW)">Installed Capacity (MW)</option>
     <option value="Investments (USD)">Investments (USD)</option>
@@ -58,14 +79,33 @@
 </label>
 
     <label>Filtros:
-      <button id="applyFilters">Aplicar filtros</button>
+      <button id="applyFilters" class="btn btn-success">Aplicar filtros</button>
     </label>
   </div>
+  
 
   <div class="grafico">
     <canvas id="myChart"></canvas>
   </div>
+</main>
 
+<footer class="footer">
+    <div class="container">
+        <p>&copy; 2025 Energy. Todos los derechos reservados. </p>
+        <p>Desarrollado por</p>
+        <p> Sebastian Correa - Jhon Edison Garcia</p>
+        <i class = "fab fa-email"></i> @gmail.com
+        <i class = "fab fa-email"></i> edisonegro20@gmail.com
+        <p>Talentotech</p>
+        <ul class="social-icons" style="text-align: right;">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </ul>
+        
+    </div>
+</footer>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
