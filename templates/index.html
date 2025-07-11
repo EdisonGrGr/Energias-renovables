@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Energías Renovables</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>Energías Renovables</h1>
+
+  <div class="filtros">
+    <label>País:
+      <select id="countrySelect">
+        {% for country in countries %}
+        <option value="{{ country }}">{{ country }}</option>
+        {% endfor %}
+      </select>
+    </label>
+
+    <label>Año:
+      <select id="yearSelect">
+        {% for year in years %}
+        <option value="{{ year }}">{{ year }}</option>
+        {% endfor %}
+      </select>
+    </label>
+
+    <label>Tipo Energía:
+      <select id="energyTypeSelect">
+        {% for type in energy_types %}
+        <option value="{{ type }}">{{ type }}</option>
+        {% endfor %}
+      </select>
+    </label>
+
+    <label>Tipo de gráfica:
+  <select id="chartTypeSelect">
+    <option value="bar">Barras</option>
+    <option value="pie">Torta</option>
+    <option value="line">Línea</option>
+    <option value="radar">Radar</option>
+    <option value="doughnut">Dona</option>
+  </select>
+</label>
+
+
+    <label>Métricas:
+  <select id="metricSelect" multiple size="6">
+    <option value="Production (GWh)">Production (GWh)</option>
+    <option value="Installed Capacity (MW)">Installed Capacity (MW)</option>
+    <option value="Investments (USD)">Investments (USD)</option>
+    <option value="CO2 Emissions">CO2 Emissions</option>
+    <option value="Energy Consumption">Energy Consumption</option>
+    <option value="Renewable Energy Jobs">Renewable Energy Jobs</option>
+    <option value="Proportion of Energy from Renewables">Proportion of Energy from Renewables</option>
+  </select>
+</label>
+
+    <label>Filtros:
+      <button id="applyFilters">Aplicar filtros</button>
+    </label>
+  </div>
+
+  <div class="grafico">
+    <canvas id="myChart"></canvas>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

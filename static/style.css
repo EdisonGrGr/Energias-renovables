@@ -1,0 +1,53 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 2rem;
+  background: #f4f4f4;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 1rem;
+}
+
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.filtros label {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+}
+
+.filtros select,
+.filtros button {
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+.grafico {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#metricSelect {
+  appearance: none;
+  min-width: 220px;
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 0.9rem;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+  background-color: #fff;
+  height: 150px;
+  overflow-y: auto;
+}
