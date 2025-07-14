@@ -4,25 +4,45 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Energías Renovables</title>
+
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
 </head>
 <body>
-  <header class="header">
-        <div class="container">
-            <h3 class="logo">Energy<span><a href="#filtros">Dashboard</a></span></h3>
-                <ul class="nav-menu">
-                    <li class="nav-menu-item"><a href="#hero" class="nav-menu-link">Inicio</a></li>
-                    <li class="nav-menu-item"><a href="#tipos" class="nav-menu-link">Tipos</a></li>
-                    <li class="nav-menu-item"><a href="#filtros" class="nav-menu-link">Métricas</a></li>
-                </ul>
-            </nav>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+
+      <div class="container">
+        <a class="navbar-brand font-weight-bold" href="#filtros">
+          Energy<span style="color: #28a745; font-weight: bold;">Dashboard</span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link text-success font-weight-bold" href="#hero">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-success font-weight-bold" href="#tipos">Tipos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-success font-weight-bold" href="#filtros">Métricas</a>
+            </li>
+          </ul>
         </div>
-    </header>
+      </div>
+    </nav>
+  </header>
+
   <main>
-    <section class="hero">
+    <section id="hero" class="hero">
       <div class="container">
         <h1>Explora las Energías<span> Renovables</span></h1>
         <h2>Analiza y compara los resultados obtenidos por paises que ya han empezado la transición hacia las energías renovables.</h2>
@@ -31,38 +51,39 @@
 
     <section id="tipos" class="energy-types">
       <h2>Tipos de Energías <span>Renovables</span></h2>
-            <div class="container">
-                <div class="energy-type-solar">
-                    <img src="static/img/solar.jpg" alt="Energía Solar">
-                    <h3>Energía Solar</h3>
-                    <p>La energía solar es la energía obtenida a partir de la radiación solar.</p>
-                </div>
-                <div class="energy-type-hidroelectrica">
-                    <img src="static/img/Hydro.jpg" alt="Energía Hidroeléctrica">
-                    <h3>Energía Hidroeléctrica</h3>
-                    <p>La energía hidroeléctrica es la energía obtenida a partir del movimiento del agua.</p>
-                </div>
-                <div class="energy-type-geotermica">
-                    <img src="static/img/Geother.jpg" alt="Energía Geotérmica">
-                    <h3>Energía Geotérmica</h3>
-                    <p>La energía geotérmica es la energía obtenida a partir del calor interno de la Tierra.</p>
-                </div>
-                <div class="energy-type-eolica">
-                    <img src="static/img/Eolica.jpg" alt="Energía Eólica">
-                    <h3>Energía Eólica</h3>
-                    <p>La energía eólica es la energía obtenida a partir del viento.</p>
-                </div>
-                <div class="energy-type-biomasa">
-                    <img src="static/img/Biomasa.jpg" alt="Energía de Biomasa">
-                    <h3>Energía de Biomasa</h3>
-                    <p>La energía de biomasa es la energía obtenida a partir de materia orgánica.</p>
-                </div>
-                <div class="energy-type-biogas">
-                    <img src="static/img/Biogas.jpg" alt="Energía de Biogás">
-                    <h3>Energía de Biogás</h3>
-                    <p>La energía de biogás es la energía obtenida a partir de la descomposición anaeróbica de materia orgánica.</p>
-                </div>
-        </section>
+      <div class="container d-flex flex-wrap justify-content-center">
+        <div class="energy-type-solar m-2 text-center">
+          <img src="static/img/solar.jpg" alt="Energía Solar">
+          <h3>Energía Solar</h3>
+          <p>La energía solar es la energía obtenida a partir de la radiación solar.</p>
+        </div>
+        <div class="energy-type-hidroelectrica m-2 text-center">
+          <img src="static/img/Hydro.jpg" alt="Energía Hidroeléctrica">
+          <h3>Energía Hidroeléctrica</h3>
+          <p>La energía hidroeléctrica es la energía obtenida a partir del movimiento del agua.</p>
+        </div>
+        <div class="energy-type-geotermica m-2 text-center">
+          <img src="static/img/Geother.jpg" alt="Energía Geotérmica">
+          <h3>Energía Geotérmica</h3>
+          <p>La energía geotérmica es la energía obtenida a partir del calor interno de la Tierra.</p>
+        </div>
+        <div class="energy-type-eolica m-2 text-center">
+          <img src="static/img/eolica.jpg" alt="Energía Eólica">
+          <h3>Energía Eólica</h3>
+          <p>La energía eólica es la energía obtenida a partir del viento.</p>
+        </div>
+        <div class="energy-type-biomasa m-2 text-center">
+          <img src="static/img/Biomasa.jpg" alt="Energía de Biomasa">
+          <h3>Energía de Biomasa</h3>
+          <p>La energía de biomasa es la energía obtenida a partir de materia orgánica.</p>
+        </div>
+        <div class="energy-type-biogas m-2 text-center">
+          <img src="static/img/Biogas.jpg" alt="Energía de Biogás">
+          <h3>Energía de Biogás</h3>
+          <p>La energía de biogás es la energía obtenida a partir de la descomposición anaeróbica de materia orgánica.</p>
+        </div>
+      </div>
+    </section>
 
 
         <div id="alertMessage" class="alert alert-danger d-none" role="alert"></div>
@@ -148,6 +169,9 @@
         
     </div>
 </footer>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
