@@ -7,17 +7,16 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
 </head>
 <body>
   <header class="header">
         <div class="container">
-            <h3 class="logo">Renewable<span>Energies</span></h3>
+            <h3 class="logo">Energy<span><a href="#filtros">Dashboard</a></span></h3>
                 <ul class="nav-menu">
-                    <li class="nav-menu-item"><a href="#inicio" class="nav-menu-link">Inicio</a></li>
+                    <li class="nav-menu-item"><a href="#hero" class="nav-menu-link">Inicio</a></li>
                     <li class="nav-menu-item"><a href="#tipos" class="nav-menu-link">Tipos</a></li>
-                    <li class="nav-menu-item"><a href="#beneficios" class="nav-menu-link">Beneficios</a></li>
-                    <li class="nav-menu-item"><a href="#proyectos" class="nav-menu-link">Proyectos</a></li>
-                    <li class="nav-menu-item"><a href="#contacto" class="nav-menu-link">Contacto</a></li>
+                    <li class="nav-menu-item"><a href="#filtros" class="nav-menu-link">Métricas</a></li>
                 </ul>
             </nav>
         </div>
@@ -25,14 +24,55 @@
   <main>
     <section class="hero">
       <div class="container">
-        <h1>Explora las energías<span> renovables</span></h1>
-        <h2>Información sobre energías renovables y su impacto en el medio ambiente.</h2>
+        <h1>Explora las Energías<span> Renovables</span></h1>
+        <h2>Analiza y compara los resultados obtenidos por paises que ya han empezado la transición hacia las energías renovables.</h2>
       </div>
     </section>
 
-  <div class="filtros">
-    <label> País:
-      <select id="countrySelect" class="form-select" aria-label="Default select example">
+    <section id="tipos" class="energy-types">
+      <h2>Tipos de Energías <span>Renovables</span></h2>
+            <div class="container">
+                <div class="energy-type-solar">
+                    <img src="static/img/solar.jpg" alt="Energía Solar">
+                    <h3>Energía Solar</h3>
+                    <p>La energía solar es la energía obtenida a partir de la radiación solar.</p>
+                </div>
+                <div class="energy-type-hidroelectrica">
+                    <img src="static/img/hydro.jpg" alt="Energía Hidroeléctrica">
+                    <h3>Energía Hidroeléctrica</h3>
+                    <p>La energía hidroeléctrica es la energía obtenida a partir del movimiento del agua.</p>
+                </div>
+                <div class="energy-type-geotermica">
+                    <img src="static/img/geother.jpg" alt="Energía Geotérmica">
+                    <h3>Energía Geotérmica</h3>
+                    <p>La energía geotérmica es la energía obtenida a partir del calor interno de la Tierra.</p>
+                </div>
+                <div class="energy-type-eolica">
+                    <img src="static/img/eolica.jpg" alt="Energía Eólica">
+                    <h3>Energía Eólica</h3>
+                    <p>La energía eólica es la energía obtenida a partir del viento.</p>
+                </div>
+                <div class="energy-type-biomasa">
+                    <img src="static/img/Biomasa.jpg" alt="Energía de Biomasa">
+                    <h3>Energía de Biomasa</h3>
+                    <p>La energía de biomasa es la energía obtenida a partir de materia orgánica.</p>
+                </div>
+                <div class="energy-type-biogas">
+                    <img src="static/img/Biogas.jpg" alt="Energía de Biogás">
+                    <h3>Energía de Biogás</h3>
+                    <p>La energía de biogás es la energía obtenida a partir de la descomposición anaeróbica de materia orgánica.</p>
+                </div>
+        </section>
+
+        <div id="alertMessage" class="alert alert-danger d-none" role="alert"></div>
+
+        <section id ="filtros" class="filtros">
+          <div class="container">
+            <h2>Métricas de Energías <span>Renovables</span></h2>
+            <p>Selecciona los filtros para visualizar las métricas de energías renovables.</p>
+            <div class="filtros">
+              <label> País:
+                <select id="countrySelect" class="form-select" aria-label="Default select example">
         {% for country in countries %}
         <option value="{{ country }}">{{ country }}</option>
         {% endfor %}
@@ -87,6 +127,7 @@
   <div class="grafico">
     <canvas id="myChart"></canvas>
   </div>
+  </section>
 </main>
 
 <footer class="footer">
@@ -94,8 +135,8 @@
         <p>&copy; 2025 Energy. Todos los derechos reservados. </p>
         <p>Desarrollado por</p>
         <p> Sebastian Correa - Jhon Edison Garcia</p>
-        <i class = "fab fa-email"></i> @gmail.com
-        <i class = "fab fa-email"></i> edisonegro20@gmail.com
+        <i class = "fab fa-email"></i>banrre@hotmail.com
+        <i class = "fab fa-email"></i>  - edisonegro20@gmail.com
         <p>Talentotech</p>
         <ul class="social-icons" style="text-align: right;">
             <a href="#"><i class="fab fa-facebook-f"></i></a>

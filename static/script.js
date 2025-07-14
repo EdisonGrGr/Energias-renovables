@@ -10,10 +10,16 @@ document.getElementById("applyFilters").addEventListener("click", function () {
   const metrics = Array.from(metricOptions).map(option => option.value);
 
   // Verificar que al menos un valor esté seleccionado
-  if (metrics.length === 0) {
-    alert("Por favor seleccione al menos una métrica.");
-    return;
-  }
+  const alertDiv = document.getElementById("alertMessage");
+
+if (metrics.length === 0) {
+  alertDiv.textContent = "⚠️ Selecciona al menos una métrica antes de continuar.";
+  alertDiv.classList.remove("d-none");
+  return;
+} else {
+  alertDiv.classList.add("d-none");
+}
+
 
   fetch("/get_data", {
     method: "POST",
