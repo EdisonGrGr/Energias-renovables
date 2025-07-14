@@ -156,7 +156,7 @@ h1 {
 /* Hero Section */
 .hero {
     height: 85vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../static/img/Sarnia_Solar-09.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../static/img/Fondo.jpeg') no-repeat center center/cover;
     color: var(--white);
     display: flex;
     align-items: center;
@@ -166,7 +166,7 @@ h1 {
 }
 
 .hero h1 {
-    font-size: 4.0rem;
+    font-size: 3.0rem;
     margin-bottom: 1rem;
 }
 
