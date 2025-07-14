@@ -14,7 +14,7 @@ Backend construido con Flask que procesa los datos y entrega los resultados.
 
 📦 Instalación
 1. Clonar el repositorio
-git clone https://github.com/EdisonGrGr/Energias-renovables.git)
+git clone https://github.com/EdisonGrGr/Energias-renovables.git
 2. Crear y activar entorno virtual
 python -m venv env
 env\Scripts\activate        # Windows
